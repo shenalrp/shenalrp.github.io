@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shenal Perera | About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.hero-flex{display:flex;gap:40px;align-items:center;justify-content:space-between;flex-wrap:wrap-reverse}
+.hero-flex>div:first-child{flex:1 1 420px;min-width:280px}
+.hero-photo{width:168px;height:168px;border-radius:14px;object-fit:cover;border:1px solid var(--line);flex:none}
+
+.timeline .row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);transition:border-color .3s,background .2s}
+.timeline .row:last-child{border-bottom:1px solid var(--line)}
+.timeline .row:hover{background:color-mix(in srgb, var(--bg2) 60%, transparent)}
+.timeline .yr{font-family:"IBM Plex Mono",monospace;color:var(--acc);font-size:12.5px}
+.timeline b{font-family:"Space Grotesk",sans-serif;font-size:18px;font-weight:600}
+.timeline .org{color:var(--mute);font-size:13px;display:block;margin-top:2px}
+.timeline p{color:var(--mute);font-size:13.5px;margin-top:6px}
+
+.edu .row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.edu .row:last-child{border-bottom:1px solid var(--line)}
+.edu .row .yr{font-family:"IBM Plex Mono",monospace;color:var(--acc);font-size:12.5px}
+.edu .row b{font-family:"Space Grotesk",sans-serif;font-size:18px;font-weight:600}
+.edu .row .org{color:var(--mute);font-size:13px;display:block;margin-top:2px}
+.edu .row p{color:var(--mute);font-size:13.5px;margin-top:4px}
+
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skills span{border:1px solid var(--line);padding:8px 14px;font-size:12.5px;color:var(--mute);font-family:"IBM Plex Mono",monospace;transition:border-color .2s,color .2s}
+.skills span:hover{border-color:var(--acc);color:var(--fg)}
+
+@media(max-width:820px){
+  .timeline .row,.edu .row{grid-template-columns:1fr}
+  .hero-photo{width:120px;height:120px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="index.html"><span class="mark">SP</span> Shenal Perera</a>
+  <ul class="navlinks">
+    <li><a href="engineering.html" style="--tagc:var(--acc)"><span class="idx">01</span>Engineering</a></li>
+    <li><a href="photography/index.html" style="--tagc:var(--acc2)"><span class="idx">02</span>Photography</a></li>
+    <li><a href="creative.html" style="--tagc:var(--acc3)"><span class="idx">03</span>Creative</a></li>
+    <li><a href="about.html" class="on" style="--tagc:var(--acc)"><span class="idx">04</span>About</a></li>
+  </ul>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+  </button>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-flex">
+    <div>
+      <div class="eyebrow reveal">04 / About</div>
+      <h1 class="reveal">Leadership, education &amp; certifications</h1>
+      <p class="lede reveal">I'm Shenal, a Mechatronics Engineering student at TMU, originally from Colombo, Sri Lanka, now based in Oakville, Ontario. I like building things that are hands-on and functional, whether that's engineering coursework, a website, or a photo. Outside coursework, I've spent the last several years in student leadership, media, and competitive swimming.</p>
+    </div>
+    <img class="hero-photo reveal" src="assets/img/headshot.jpg" alt="Portrait of Shenal Perera">
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="no">§1</span>Leadership &amp; Activities</h2>
+  <div class="timeline reveal-stagger">
+    <div class="row exp-row">
+      <div class="yr">2025 – Present</div>
+      <div><span class="logo-chip light"><img src="assets/logos/fyeo.png" alt="FYEO logo"></span><b>First-Year Committee</b><span class="org">First-Year Engineering Office (FYEO), TMU</span><p>Represent first-year Mechatronics peers' feedback and concerns to the engineering office.</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Selected from the Mechatronics first-year cohort to sit on the committee. Meets with FYEO staff to flag issues affecting first-years and relay updates back to the group.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2025 – Present</div>
+      <div><span class="logo-chip light"><img src="assets/logos/mcu.png" alt="MCU logo"></span><b>Director of Media</b><span class="org">Mechatronics Engineering Course Union (MCU), TMU</span><p>Design and manage promotional and social media content.</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Handles the design pipeline for MCU's events and announcements: posters and promo graphics, several of which are in the <a href="creative.html">Creative tab</a>.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2024</div>
+      <div><span class="logo-chip light"><img src="assets/logos/prefects-board.png" alt="Prefects' Board logo"></span><b>Deputy Head Prefect</b><span class="org">St. Benedict's College</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Served as Deputy Head Prefect for the 2024/25 batch, the year leading into A-Levels. Second on the Prefects' Board after the Head Prefect.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2022 – 2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/prefects-board.png" alt="Prefects' Board logo"></span><b>College Prefect</b><span class="org">St. Benedict's College</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">General member of the Prefects' Board before being promoted to Deputy Head Prefect the following year.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2022</div>
+      <div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>Class Representative</b><span class="org">St. Benedict's College</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Represented the class to teachers and school administration before stepping into the Prefects' Board later that year.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr"></div>
+      <div><span class="logo-chip light"><img src="assets/logos/cadet.png" alt="Cadet Platoon (NCC) logo"></span><b>Senior Cadet</b><span class="org">St. Benedict's College Cadet Platoon</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">St. Benedict's runs a platoon under Sri Lanka's school cadetting system (National Cadet Corps): drill, discipline, and inter-school competition. Completed a First Aid course as part of the cadet program.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2022 – 2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>Vice President</b><span class="org">Nature Photography Society</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Helped run the society's shoots and showcases, part of where the work in the <a href="photography/index.html">Photography tab</a> started.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2023 – 2024</div>
+      <div><span class="logo-chip light"><img src="assets/logos/science-union.png" alt="Science Union logo"></span><b>Editor</b><span class="org">College Science Union</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Edited content for the Science Union's publications and updates.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2022 – 2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/sports-media.png" alt="Sports Media Unit crest"></span><b>Member, Sports Media Unit</b><p>Appreciation Merit Award, Colours Night 2022 &amp; 2023.</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Covered school sports events: match-day photography and content for the unit.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr"></div>
+      <div><span class="logo-chip light"><img src="assets/logos/elu.png" alt="English Literary Union logo"></span><b>Regular Participant</b><span class="org">English Literary Union</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Took part in the college's annual literary activities, representing St. Benedict's at Divisional and Zonal level competitions.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/interact.png" alt="Interact Club logo"></span><b>Assistant Secretary &amp; Installation Ceremony Chairperson</b><span class="org">Interact Club</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Ran secretarial duties for the club and chaired the installation ceremony; some of the campaign poster work is in the <a href="creative.html">Creative tab</a>.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/drama-club.png" alt="Shakespeare Drama Club logo"></span><b>Treasurer</b><span class="org">English Shakespeare Drama Club</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Acted in the Royal College Drama Competition, organized by the Interact Club of Royal College, and the All-Island Inter-School Shakespeare Drama Competition, organized by the Rotary Club and YMCA Colombo.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2014 – 2023</div>
+      <div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>Competitive Swimmer</b><p>Inter-House swimming champion, 2015–2019; Merit Award (Swimming), Colours Night 2017, 2018, 2021–2023; Special Award for Best Junior Swimmer (2017); National Age Group Championships qualifier (2016) and Pentathlon Championships (2016, 2017, 2018, 2020); 1st place, 200m Butterfly, National Intermediate Age Group Championships (2017); novices championships (2016): 2nd, 200m Medley, 3rd, 50m Breaststroke.</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">A member of the College aquatic squad from a young age, competing in meets and championships run by both the college and the Sri Lanka Aquatic Association. Close to a decade of competitive training and racing before stepping back ahead of university.</div></div>
+    </div>
+    <div class="row exp-row">
+      <div class="yr">2025</div>
+      <div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>Nominated, Best All-Rounder Award</b><span class="org">St. Benedict's College Prize Giving</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Nominated for balancing academics, leadership, and extracurriculars through the final year.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="no">§2</span>Education</h2>
+  <div class="edu reveal-stagger">
+    <div class="row exp-row"><div class="yr">2025 – Present</div><div><span class="logo-chip light"><img src="assets/logos/tmu.png" alt="TMU logo"></span><b>Toronto Metropolitan University</b><p>Mechatronics Engineering, BEng (Hons)</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Mechatronics blends mechanical, electrical, and software engineering into one integrated discipline. First-year coursework so far spans circuits, calculus, linear algebra, and mechanics; GPA and course highlights to be added here as the program progresses.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2024 – 2025</div><div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>Pearson Edexcel International A Level</b><span class="org">St. Benedict's College, Colombo</span><p>Math: A, Physics: A, IT: B</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Sat in the same academic year as serving Deputy Head Prefect and holding club responsibilities, balancing sixth-form coursework with leadership commitments.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2024 – 2025</div><div><span class="logo-chip light"><img src="assets/logos/tvo-ilc.png" alt="TVO ILC logo"></span><b>SCH4U: Chemistry</b><span class="org">TVO Independent Learning Centre</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Chemistry was offered at St. Benedict's but wasn't part of the A-Level combination taken there. Completed independently through TVO's online program afterward, since SCH4U is a prerequisite for engineering programs in Canada.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2022 – 2023</div><div><span class="logo-chip light"><img src="assets/logos/sbc.png" alt="St. Benedict's College crest"></span><b>St. Benedict's College, Colombo</b><p>GCE Ordinary Level, 9 A passes</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">GCE Ordinary Level (O/Level) is Sri Lanka's national secondary school examination, administered by the Department of Examinations. Full subject set, sat at St. Benedict's College.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2025</div><div><span class="logo-chip light"><img src="assets/logos/ielts.png" alt="IELTS logo"></span><b>IELTS Academic</b><p>7.5 overall</p></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Taken as part of the study-permit application process for studying in Canada.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="no">§3</span>Skills</h2>
+  <div class="skills reveal-stagger">
+    <span>HTML / CSS / JS (intermediate, via Edexcel IAL IT)</span>
+    <span>Web &amp; graphic design (Photoshop, Lightroom, Canva)</span>
+    <span>Photography</span>
+    <span>Analytical &amp; mathematical reasoning</span>
+    <span>Event coordination</span>
+    <span>Team leadership</span>
+    <span>Bilingual, Sinhala and English</span>
+  </div>
+</div></section>
+
+<section style="border-bottom:none"><div class="wrap">
+  <h2 class="reveal"><span class="no">§4</span>Certifications</h2>
+  <div class="edu reveal-stagger">
+    <div class="row exp-row"><div class="yr">2024 – 2029</div><div><span class="logo-chip light"><img src="assets/logos/ils.png" alt="International Life Saving logo"></span><b>International Pool Lifeguard Certification</b><span class="org">International Life Saving Federation (ILS)</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">ILS is the global umbrella body for lifesaving and water safety, uniting 130+ national federations, including Sri Lanka Life Saving, the national organisation that administered this exam, under one set of standardized qualifications. Pool Lifeguard is one of ILS's core international certificates (No. SRI‑24‑007, valid Jul 2024 – Jul 2029), built on a foundation of earlier Sri Lanka Life Saving rescue and swim courses and years of competitive swimming.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2024</div><div><span class="logo-chip light"><img src="assets/logos/slls.png" alt="Sri Lanka Life Saving logo"></span><b>CPR &amp; Water Safety Certification</b><span class="org">Sri Lanka Life Saving</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Practical and written exams covering CPR/DRSABCDS for drowning, cardiac arrest, electric shock, choking and snake-bite first aid, plus open-water accident response and non-contact rescue. Sat the same exam round as the Pool Lifeguard certification above.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2025 – 2030</div><div><span class="logo-chip light"><img src="assets/logos/cifs.png" alt="CIFS logo"></span><b>Food Handler Certificate</b><span class="org">Canadian Institute of Food Safety (CIFS)</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">CIFS is a Toronto-based food safety educator whose Food Handler course is approved and accepted by health authorities across every Canadian province and territory. Completed for food-service work in Ontario.</div></div>
+    </div>
+    <div class="row exp-row"><div class="yr">2024</div><div><span class="logo-chip light"><img src="assets/logos/clk.png" alt="CameraLK Photography Academy logo"></span><b>Basic Course in Photography</b><span class="org">Camera LK Photography Academy</span></div>
+      <div class="exp-detail"><div class="exp-detail-inner">Completed with a Merit Award. Camera settings, composition, and lighting fundamentals that underpin the work in the <a href="photography/index.html">Photography tab</a>.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>© <span id="yr"></span> SHENAL PERERA</p>
+  <p><a href="mailto:shenalrp22@gmail.com" style="color:var(--mute);text-decoration:none">shenalrp22@gmail.com</a></p>
+  <div class="social">
+    <a href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="https://www.linkedin.com/in/shenal-perera-524128398" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/shenalrp22-bit" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+  </div>
+</div></footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

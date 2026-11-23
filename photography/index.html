@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shenal Perera | Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.count{font-family:"IBM Plex Mono",monospace;color:var(--mute);font-size:12.5px}
+
+.filters{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:28px;width:fit-content;flex-wrap:wrap}
+.filters button{background:var(--bg);border:0;color:var(--mute);font-family:"IBM Plex Mono",monospace;font-size:12px;padding:10px 18px;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent}
+.filters button:hover{color:var(--fg)}
+.filters button.on{color:var(--fg);border-bottom-color:var(--tagc,var(--acc));background:var(--bg2)}
+.filters button .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--tagc,var(--acc));margin-right:7px;vertical-align:middle}
+
+.grid{columns:3 300px;column-gap:1px}
+.tile{break-inside:avoid;margin-bottom:1px;position:relative;cursor:zoom-in;overflow:hidden;background:var(--bg2)}
+.tile img{display:block;width:100%;height:auto;transition:opacity .4s,transform .4s}
+.tile img.ld{opacity:1}
+.tile img:not(.ld){opacity:0}
+.tile:hover img{transform:scale(1.035)}
+.tile span{position:absolute;left:10px;bottom:8px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;opacity:0;transition:opacity .2s;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.tile span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--tagc,var(--acc));margin-right:6px;vertical-align:middle}
+.tile:hover span{opacity:1}
+
+#lb{position:fixed;inset:0;z-index:50;background:rgba(5,6,7,.97);display:none;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:84vh;object-fit:contain;animation:lbIn .25s ease}
+@keyframes lbIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+#lb .bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--mute)}
+#lb button{background:none;border:0;color:#fff;cursor:pointer;font:300 30px/1 "Inter",sans-serif;padding:10px 16px;opacity:.7;transition:opacity .2s}
+#lb button:hover{opacity:1}
+#lb .prev,#lb .next{position:absolute;top:50%;transform:translateY(-50%)}
+#lb .prev{left:8px}#lb .next{right:8px}
+
+@media(max-width:820px){
+  .grid{columns:2 160px}
+  #lb .prev,#lb .next{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="../index.html"><span class="mark">SP</span> Shenal Perera</a>
+  <ul class="navlinks">
+    <li><a href="../engineering.html" style="--tagc:var(--acc)"><span class="idx">01</span>Engineering</a></li>
+    <li><a href="index.html" class="on" style="--tagc:var(--acc2)"><span class="idx">02</span>Photography</a></li>
+    <li><a href="../creative.html" style="--tagc:var(--acc3)"><span class="idx">03</span>Creative</a></li>
+    <li><a href="../about.html" style="--tagc:var(--acc)"><span class="idx">04</span>About</a></li>
+  </ul>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+  </button>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow reveal">02 / Photography</div>
+  <h1 class="reveal">Events, nature &amp; more</h1>
+  <p class="lede reveal">A growing collection of photography, all shot and edited by me: event coverage, nature and wildlife in Sri Lanka, and automotive work.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="head reveal"><h2>Selected work</h2><div class="count" id="count"></div></div>
+  <div class="filters reveal" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>© <span id="yr"></span> SHENAL PERERA</p>
+  <p><a href="mailto:shenalrp22@gmail.com" style="color:var(--mute);text-decoration:none">shenalrp22@gmail.com</a></p>
+  <div class="social">
+    <a href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="https://www.linkedin.com/in/shenal-perera-524128398" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/shenalrp22-bit" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+  </div>
+</div></footer>
+
+<div id="lb" role="dialog" aria-modal="true">
+  <div class="bar"><span id="lbCap"></span><button id="lbClose" aria-label="Close">×</button></div>
+  <button class="prev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="next" aria-label="Next">›</button>
+</div>
+
+<script src="../assets/js/site.js" defer></script>
+<script>
+const DATA = [{"cat": "Events", "src": "001.jpg", "w": 1240, "h": 2000}, {"cat": "Events", "src": "002.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "003.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "004.jpg", "w": 1333, "h": 2000}, {"cat": "Events", "src": "005.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "006.jpg", "w": 1333, "h": 2000}, {"cat": "Events", "src": "007.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "008.jpg", "w": 1333, "h": 2000}, {"cat": "Events", "src": "009.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "010.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "011.jpg", "w": 2000, "h": 1333}, {"cat": "Events", "src": "012.jpg", "w": 2000, "h": 1333}, {"cat": "Nature", "src": "013.jpg", "w": 1220, "h": 2000}, {"cat": "Nature", "src": "014.jpg", "w": 1999, "h": 1125}, {"cat": "Nature", "src": "015.jpg", "w": 1999, "h": 1125}, {"cat": "Nature", "src": "016.jpg", "w": 1022, "h": 1816}, {"cat": "Nature", "src": "017.jpg", "w": 2000, "h": 1125}, {"cat": "Nature", "src": "018.jpg", "w": 2000, "h": 1124}, {"cat": "Nature", "src": "019.jpg", "w": 1125, "h": 2000}, {"cat": "Nature", "src": "020.jpg", "w": 2000, "h": 1333}, {"cat": "Nature", "src": "021.jpg", "w": 2000, "h": 1381}, {"cat": "Nature", "src": "022.jpg", "w": 1999, "h": 1333}, {"cat": "Nature", "src": "023.jpg", "w": 1259, "h": 2000}, {"cat": "Nature", "src": "024.jpg", "w": 2000, "h": 1421}, {"cat": "Nature", "src": "025.jpg", "w": 2000, "h": 1333}, {"cat": "Nature", "src": "026.jpg", "w": 2000, "h": 1209}, {"cat": "Nature", "src": "027.jpg", "w": 1963, "h": 1229}, {"cat": "Nature", "src": "028.jpg", "w": 2000, "h": 1333}, {"cat": "Other", "src": "029.jpg", "w": 2000, "h": 1125}, {"cat": "Other", "src": "031.jpg", "w": 2000, "h": 1124}, {"cat": "Other", "src": "032.jpg", "w": 1999, "h": 1125}, {"cat": "Other", "src": "033.jpg", "w": 2000, "h": 1333}];
+const TAGC = { Events: "var(--acc)", Nature: "var(--acc3)", Other: "var(--acc2)" };
+
+const $ = s => document.querySelector(s);
+const CATS = ["All", ...new Set(DATA.map(d => d.cat))];
+let current = "All", view = DATA, idx = 0;
+
+function mixed(){
+  const groups = CATS.slice(1).map(c => DATA.filter(d => d.cat === c));
+  const out = []; let i = 0;
+  while (out.length < DATA.length){ groups.forEach(g => { if (g[i]) out.push(g[i]); }); i++; }
+  return out;
+}
+
+function render(){
+  view = current === "All" ? mixed() : DATA.filter(d => d.cat === current);
+  $("#count").textContent = view.length + " PHOTOGRAPHS";
+  $("#grid").innerHTML = view.map((d,i) =>
+    `<figure class="tile" data-i="${i}" style="--tagc:${TAGC[d.cat]}"><img loading="lazy" src="img/t/${d.src}" width="${d.w}" height="${d.h}" alt="${d.cat} photograph by Shenal Perera" onload="this.classList.add('ld')"><span>${d.cat}</span></figure>`).join("");
+  document.querySelectorAll("#filters button").forEach(b => b.classList.toggle("on", b.dataset.c === current));
+}
+
+$("#filters").innerHTML = CATS.map(c =>
+  `<button data-c="${c}" style="--tagc:${c==="All"?"var(--acc)":TAGC[c]}"><span class="dot"></span>${c==="All"?"All":c} (${c==="All"?DATA.length:DATA.filter(d=>d.cat===c).length})</button>`).join("");
+$("#filters").addEventListener("click", e => { const b = e.target.closest("button"); if (b){ current = b.dataset.c; render(); }});
+$("#grid").addEventListener("click", e => { const t = e.target.closest(".tile"); if (t) open(+t.dataset.i); });
+
+function show(){ const d = view[idx]; $("#lbImg").src = "img/" + d.src; $("#lbCap").textContent = `${d.cat.toUpperCase()} · ${idx+1} / ${view.length}`;
+  [view[idx+1], view[idx-1]].forEach(n => { if (n) new Image().src = "img/" + n.src; }); }
+function open(i){ idx = i; show(); $("#lb").classList.add("open"); document.body.style.overflow = "hidden"; }
+function close(){ $("#lb").classList.remove("open"); document.body.style.overflow = ""; }
+function step(n){ idx = (idx + n + view.length) % view.length; show(); }
+$("#lb .prev").onclick = () => step(-1);
+$("#lb .next").onclick = () => step(1);
+$("#lbClose").onclick = close;
+$("#lb").addEventListener("click", e => { if (e.target.id === "lb") close(); });
+document.addEventListener("keydown", e => { if (!$("#lb").classList.contains("open")) return;
+  if (e.key === "Escape") close(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
+let tx = 0;
+$("#lb").addEventListener("touchstart", e => tx = e.touches[0].clientX, {passive:true});
+$("#lb").addEventListener("touchend", e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); });
+
+render();
+</script>
+</body>
+</html>
