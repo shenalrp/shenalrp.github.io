@@ -21,8 +21,7 @@ body{--acc:var(--acc3)} /* this page runs violet as its primary accent */
 .feature p{color:var(--mute);font-size:13.5px}
 .feature .tag{display:inline-block;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--acc)}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.grid.two{grid-template-columns:repeat(2,1fr)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .tile{background:var(--bg);cursor:zoom-in;overflow:hidden}
 .tile img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;transition:transform .35s,opacity .2s}
 .tile:hover img{opacity:.92;transform:scale(1.04)}
@@ -35,8 +34,11 @@ body{--acc:var(--acc3)} /* this page runs violet as its primary accent */
 
 @media(max-width:820px){
   .feature{grid-template-columns:1fr}
-  .grid,.grid.two{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
   .sub{margin-left:0}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -83,14 +85,32 @@ body{--acc:var(--acc3)} /* this page runs violet as its primary accent */
 
 <section><div class="wrap">
   <h2 class="reveal"><span class="logo-chip light" style="margin-left:2px"><img src="assets/logos/interact.png" alt="Interact Club logo"></span><span class="no" style="margin-left:8px">§3</span>Interact Club</h2>
-  <p class="sub reveal">Campaign posters for Interact Club service projects at St. Benedict's College.</p>
-  <div class="grid two reveal-stagger" id="interact"></div>
+  <p class="sub reveal">Campaign posters and event branding for Interact Club service projects and the 25th Installation &amp; Silver Jubilee, St. Benedict's College.</p>
+  <div class="grid reveal-stagger" id="interact"></div>
 </div></section>
 
 <section><div class="wrap">
   <h2 class="reveal"><span class="logo-chip light" style="margin-left:2px"><img src="assets/logos/drama-club.png" alt="Shakespeare Drama Club logo"></span><span class="no" style="margin-left:8px">§4</span>Shakespeare Drama Club</h2>
-  <p class="sub reveal">Branding and event graphics for the Drama Club, St. Benedict's College.</p>
+  <p class="sub reveal">Branding, event graphics, and merch design for the Drama Club, St. Benedict's College.</p>
   <div class="grid reveal-stagger" id="drama"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="logo-chip light" style="margin-left:2px"><img src="assets/logos/prefects-board.png" alt="Board of Prefects logo"></span><span class="no" style="margin-left:8px">§5</span>Board of Prefects</h2>
+  <p class="sub reveal">Uniform mockups, posters, and event branding for the Board of Prefects, St. Benedict's College, where I served as Deputy Head Prefect.</p>
+  <div class="grid reveal-stagger" id="prefects"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="logo-chip light" style="margin-left:2px"><img src="assets/logos/science-union.png" alt="Science Union logo"></span><span class="no" style="margin-left:8px">§6</span>Science Union</h2>
+  <p class="sub reveal">Event posters and album releases for Science Union activities, including the interschool Exploratio practical competition.</p>
+  <div class="grid reveal-stagger" id="science"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal"><span class="no">§7</span>Horizon '25 — Batch Party</h2>
+  <p class="sub reveal">Event branding for the St. Benedict's College Batch of 2025 graduation party.</p>
+  <div class="grid reveal-stagger" id="batch"></div>
 </div></section>
 
 <footer><div class="wrap">
@@ -115,12 +135,32 @@ const sets = {
   ],
   interact: [
     ["assets/creative/interact-career-dev.jpg","Career Development Program poster"],
-    ["assets/creative/interact-childrens-day.jpg","Children's Day campaign poster"]
+    ["assets/creative/interact-childrens-day.jpg","Children's Day campaign poster"],
+    ["assets/creative/interact-1-day-more.jpg","25th Installation &amp; Silver Jubilee, countdown post"],
+    ["assets/creative/interact-installation-invite.jpg","25th Installation &amp; Silver Jubilee, formal invitation"],
+    ["assets/creative/interact-miwakuteki-winner.jpg","Miwaku Teki 4.0 art competition, winner announcement"]
   ],
   drama: [
     ["assets/creative/drama-dcsbc.jpg","48th All-Island Inter-School Drama Competition, semifinals"],
     ["assets/creative/drama-artboard.jpg","Membership Drive 2K23 poster"],
-    ["assets/creative/drama-logo.png","Shakespeare Drama Club, logo design"]
+    ["assets/creative/drama-logo.png","Shakespeare Drama Club, logo design"],
+    ["assets/creative/drama-tshirt.jpg","Macbeth-themed polo shirt mockup"]
+  ],
+  prefects: [
+    ["assets/creative/prefects-vanguard-poster.jpg","Vanguard '25, annual Prefects' Day poster"],
+    ["assets/creative/prefects-polo-official.jpg","Official prefect polo mockup"],
+    ["assets/creative/prefects-uniform-mockup.jpg","Prefect uniform, polo &amp; trousers mockup"],
+    ["assets/creative/prefects-cap-back.jpg","Benedictine cap mockup, back"],
+    ["assets/creative/prefects-cap-side.jpg","Benedictine cap mockup, side"],
+    ["assets/creative/prefects-awurudu.jpg","Sinhala &amp; Tamil New Year greeting"]
+  ],
+  science: [
+    ["assets/creative/science-exploratio24.jpg","Exploratio '24, interschool practical competition poster"],
+    ["assets/creative/science-album-explorium.jpg","Explorium '24 album release"]
+  ],
+  batch: [
+    ["assets/creative/batch-party-save-the-date.jpg","HORIZON, Batch of 2025 graduation party, save-the-date"],
+    ["assets/creative/batch-party-ticket.jpg","HORIZON, graduation party ticket design"]
   ]
 };
 for (const [id, items] of Object.entries(sets)){
