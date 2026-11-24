@@ -148,3 +148,7 @@
     wireExpandRows();
   });
 })();
+
+/* block right-click save and drag-out on images (deterrent only) */
+document.addEventListener('contextmenu', function(e){ if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+document.addEventListener('dragstart', function(e){ if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });

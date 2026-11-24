@@ -236,3 +236,6 @@ html.intro-run body::before{content:"";position:fixed;inset:0;background:var(--b
 .next-nav a small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11px;letter-spacing:.12em;color:var(--mute);text-align:right;margin-bottom:4px}
 .next-nav a:hover{gap:30px}
 .next-nav svg{width:1em;height:1em;flex:none}
+
+/* image-save deterrents (casual copying only; screenshots/devtools still work) */
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
