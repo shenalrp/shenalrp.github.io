@@ -45,13 +45,13 @@ body{--acc:var(--acc3)} /* this page runs violet as its primary accent */
 <body>
 
 <nav><div class="wrap">
-  <a class="logo" href="index.html"><span class="mark">SP</span> Shenal Perera</a>
-  <ul class="navlinks">
-    <li><a href="engineering.html" style="--tagc:var(--acc)"><span class="idx">01</span>Engineering</a></li>
+  <a class="logo" href="index.html"><span class="mark"><img src="assets/img/headshot.jpg" alt="Shenal Perera"></span> <span class="name">Shenal Perera</span></a>
+  <div class="navlinks-wrap"><ul class="navlinks">
+    <li><a href="engineering.html" style="--tagc:var(--acc1)"><span class="idx">01</span>Engineering</a></li>
     <li><a href="photography/index.html" style="--tagc:var(--acc2)"><span class="idx">02</span>Photography</a></li>
     <li><a href="creative.html" class="on" style="--tagc:var(--acc3)"><span class="idx">03</span>Creative</a></li>
-    <li><a href="about.html" style="--tagc:var(--acc)"><span class="idx">04</span>About</a></li>
-  </ul>
+    <li><a href="about.html" style="--tagc:var(--acc4)"><span class="idx">04</span>About</a></li>
+  </ul></div>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">
     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
     <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
@@ -143,15 +143,13 @@ const sets = {
   drama: [
     ["assets/creative/drama-dcsbc.jpg","48th All-Island Inter-School Drama Competition, semifinals"],
     ["assets/creative/drama-artboard.jpg","Membership Drive 2K23 poster"],
-    ["assets/creative/drama-logo.png","Shakespeare Drama Club, logo design"],
     ["assets/creative/drama-tshirt.jpg","Macbeth-themed polo shirt mockup"]
   ],
   prefects: [
     ["assets/creative/prefects-vanguard-poster.jpg","Vanguard '25, annual Prefects' Day poster"],
     ["assets/creative/prefects-polo-official.jpg","Official prefect polo mockup"],
     ["assets/creative/prefects-uniform-mockup.jpg","Prefect uniform, polo &amp; trousers mockup"],
-    ["assets/creative/prefects-cap-back.jpg","Benedictine cap mockup, back"],
-    ["assets/creative/prefects-cap-side.jpg","Benedictine cap mockup, side"],
+    ["assets/creative/prefects-cap-side.jpg","Benedictine cap mockup"],
     ["assets/creative/prefects-awurudu.jpg","Sinhala &amp; Tamil New Year greeting"]
   ],
   science: [

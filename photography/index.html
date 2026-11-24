@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/site.css">
 <style>
+body{--acc:var(--acc2)} /* this page runs amber as its primary accent */
+
 .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
 .count{font-family:"IBM Plex Mono",monospace;color:var(--mute);font-size:12.5px}
 
@@ -47,13 +49,13 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="logo" href="../index.html"><span class="mark">SP</span> Shenal Perera</a>
-  <ul class="navlinks">
-    <li><a href="../engineering.html" style="--tagc:var(--acc)"><span class="idx">01</span>Engineering</a></li>
+  <a class="logo" href="../index.html"><span class="mark"><img src="../assets/img/headshot.jpg" alt="Shenal Perera"></span> <span class="name">Shenal Perera</span></a>
+  <div class="navlinks-wrap"><ul class="navlinks">
+    <li><a href="../engineering.html" style="--tagc:var(--acc1)"><span class="idx">01</span>Engineering</a></li>
     <li><a href="index.html" class="on" style="--tagc:var(--acc2)"><span class="idx">02</span>Photography</a></li>
     <li><a href="../creative.html" style="--tagc:var(--acc3)"><span class="idx">03</span>Creative</a></li>
-    <li><a href="../about.html" style="--tagc:var(--acc)"><span class="idx">04</span>About</a></li>
-  </ul>
+    <li><a href="../about.html" style="--tagc:var(--acc4)"><span class="idx">04</span>About</a></li>
+  </ul></div>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark theme">
     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
     <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
