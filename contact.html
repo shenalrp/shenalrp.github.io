@@ -21,6 +21,25 @@ body{--acc:var(--acc5)} /* this page runs blue as its primary accent */
 .c-item span.v{color:var(--mute);font-size:13.5px;word-break:break-all}
 .c-item .go{margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--mute)}
 .c-item:hover .go{color:var(--acc)}
+/* brand hover: colour wipes in top to bottom, handle gets highlighted */
+.c-item{position:relative;overflow:hidden;isolation:isolate;transition:border-color .3s}
+.c-item::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.65,0,.25,1)}
+.c-item:hover::before,.c-item:focus-visible::before{transform:scaleY(1)}
+.c-item *{transition:color .3s .15s,background-size .45s .35s,fill .3s}
+.c-item span.v{align-self:flex-start;padding:3px 8px;margin-left:-8px;background:linear-gradient(var(--hl),var(--hl)) no-repeat left/0% 100%}
+.c-item:hover span.v,.c-item:focus-visible span.v{background-size:100% 100%;color:var(--hlt,#fff)!important}
+.c-item:hover .ico,.c-item:hover .k,.c-item:hover b,.c-item:hover .go{color:var(--t,#fff)!important}
+.b-mail{--hl:#4285F4;--t:#202124}
+.b-mail::before{background:#fff}
+.b-mail::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;z-index:1;background:linear-gradient(90deg,#4285F4 0 25%,#EA4335 25% 50%,#FBBC05 50% 75%,#34A853 75%);transform:scaleX(0);transform-origin:left;transition:transform .5s .4s cubic-bezier(.65,0,.25,1)}
+.b-mail:hover::after{transform:scaleX(1)}
+.b-mail:hover .ico{color:#EA4335!important}
+.b-mail b i{font-style:normal}
+.b-mail:hover b i:nth-child(1){color:#4285F4}.b-mail:hover b i:nth-child(2){color:#EA4335}.b-mail:hover b i:nth-child(3){color:#FBBC05}.b-mail:hover b i:nth-child(4){color:#4285F4}.b-mail:hover b i:nth-child(5){color:#34A853}
+.b-mail:hover .k,.b-mail:hover .go{color:#5f6368!important}
+.b-li{--hl:#fff;--hlt:#0A66C2}.b-li::before{background:#0A66C2}.b-li:hover{border-color:#0A66C2}
+.b-ig{--hl:#fff;--hlt:#c13584}.b-ig::before{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}.b-ig:hover{border-color:#d62976}
+.b-gh{--hl:#2ea043}.b-gh::before{background:#24292f}.b-gh:hover{border-color:#fff}
 </style>
 </head>
 <body data-intro="transmit">
@@ -52,15 +71,17 @@ body{--acc:var(--acc5)} /* this page runs blue as its primary accent */
 
 <section style="border-bottom:none"><div class="wrap">
   <div class="contact-list reveal-stagger">
-    <a class="c-item" href="mailto:shenalrp22@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="k">EMAIL</span><b>Email</b><span class="v">shenalrp22@gmail.com</span><span class="go">SEND AN EMAIL →</span></a>
-    <a class="c-item" href="https://www.linkedin.com/in/shenal-perera-524128398" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span class="k">PROFESSIONAL</span><b>LinkedIn</b><span class="v">in/shenal-perera-524128398</span><span class="go">OPEN LINKEDIN →</span></a>
-    <a class="c-item" href="https://github.com/shenalrp22-bit" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span><span class="k">CODE</span><b>GitHub</b><span class="v">shenalrp22-bit</span><span class="go">OPEN GITHUB →</span></a>
-    <a class="c-item" href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span><span class="k">SOCIAL</span><b>Instagram</b><span class="v">@shenal_rp</span><span class="go">OPEN INSTAGRAM →</span></a>
+    <a class="c-item b-mail" href="mailto:shenalrp22@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="k">EMAIL</span><b><i>E</i><i>m</i><i>a</i><i>i</i><i>l</i></b><span class="v">shenalrp22@gmail.com</span><span class="go">SEND AN EMAIL →</span></a>
+    <a class="c-item b-li" href="https://www.linkedin.com/in/shenal-perera-524128398" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span class="k">PROFESSIONAL</span><b>LinkedIn</b><span class="v">in/shenal-perera-524128398</span><span class="go">OPEN LINKEDIN →</span></a>
+    <a class="c-item b-gh" href="https://github.com/shenalrp22-bit" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span><span class="k">CODE</span><b>GitHub</b><span class="v">shenalrp22-bit</span><span class="go">OPEN GITHUB →</span></a>
+    <a class="c-item b-ig" href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span><span class="k">SOCIAL</span><b>Instagram</b><span class="v">@shenal_rp</span><span class="go">OPEN INSTAGRAM →</span></a>
   </div>
 </div></section>
 
+<div class="next-nav"><div class="wrap"><a href="index.html" style="--nc:var(--fg)"><span><small>BACK TO</small>Home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
 <footer><div class="wrap">
-  <p>© <span id="yr"></span> SHENAL PERERA</p>
+  <p>© <span id="yr"></span> SHENAL PERERA · ALL RIGHTS RESERVED</p>
   <p><a href="mailto:shenalrp22@gmail.com" style="color:var(--mute);text-decoration:none">shenalrp22@gmail.com</a></p>
   <div class="social">
     <a href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>

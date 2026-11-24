@@ -228,3 +228,11 @@ html.intro-run body::before{content:"";position:fixed;inset:0;background:var(--b
 .type-ch.on{visibility:visible}
 .type-caret{display:inline-block;width:.08em;height:.85em;margin-left:.06em;background:var(--acc);vertical-align:-.05em;animation:blink .5s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
+
+/* next-page navigator */
+.next-nav{border-top:1px solid var(--line);padding:46px 0}
+.next-nav .wrap{display:flex;justify-content:flex-end}
+.next-nav a{display:inline-flex;align-items:center;gap:18px;text-decoration:none;color:var(--nc);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(26px,5vw,48px);letter-spacing:-.01em;transition:gap .25s}
+.next-nav a small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11px;letter-spacing:.12em;color:var(--mute);text-align:right;margin-bottom:4px}
+.next-nav a:hover{gap:30px}
+.next-nav svg{width:1em;height:1em;flex:none}

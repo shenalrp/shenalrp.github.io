@@ -56,7 +56,9 @@ body{--acc:var(--acc2)} /* this page runs amber as its primary accent */
 .tunnel-hud{position:absolute;left:0;right:0;top:78px;display:flex;justify-content:space-between;padding:0 clamp(18px,4vw,48px);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;color:var(--mute);z-index:5;pointer-events:none}
 .tunnel-hud b{color:var(--acc);font-weight:400}
 .tunnel-hud .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:8px;box-shadow:0 0 8px var(--acc)}
-.tunnel-hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;color:var(--mute);z-index:5;transition:opacity .3s;pointer-events:none}
+.tunnel-hint{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:500;letter-spacing:.2em;color:var(--acc);text-align:center;z-index:5;transition:opacity .3s;pointer-events:none}
+.tunnel-hint .ar{display:block;font-size:22px;margin-top:4px;animation:hintBob 1.2s ease-in-out infinite}
+@keyframes hintBob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 .tunnel-bar{position:absolute;left:0;bottom:0;height:2px;background:var(--acc);z-index:5;width:0}
 
 @media(max-width:820px){
@@ -100,7 +102,7 @@ body{--acc:var(--acc2)} /* this page runs amber as its primary accent */
     <div class="tunnel-floor"></div>
     <div class="tunnel-hud"><span><span class="dot"></span>NOW PASSING: <b id="tnCat">EVENTS</b></span><span>DEPTH <b id="tnDepth">0000</b></span></div>
     <div class="tunnel-stage" id="tnStage"></div>
-    <div class="tunnel-hint" id="tnHint">SCROLL TO GO DEEPER ↓</div>
+    <div class="tunnel-hint" id="tnHint">SCROLL DOWN<span class="ar">↓</span></div>
     <div class="tunnel-bar" id="tnBar"></div>
   </div>
 </section>
@@ -111,8 +113,10 @@ body{--acc:var(--acc2)} /* this page runs amber as its primary accent */
   <div class="grid" id="grid"></div>
 </div></section>
 
+<div class="next-nav"><div class="wrap"><a href="../creative.html" style="--nc:var(--acc3)"><span><small>NEXT · 04</small>Creative</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
 <footer><div class="wrap">
-  <p>© <span id="yr"></span> SHENAL PERERA</p>
+  <p>© <span id="yr"></span> SHENAL PERERA · ALL RIGHTS RESERVED</p>
   <p><a href="mailto:shenalrp22@gmail.com" style="color:var(--mute);text-decoration:none">shenalrp22@gmail.com</a></p>
   <div class="social">
     <a href="https://www.instagram.com/shenal_rp" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
