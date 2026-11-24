@@ -5,17 +5,19 @@
   --acc1:#45d6c6;  /* teal, stable reference for the nav tab regardless of page override */
   --acc2:#f2a93b;  /* amber  : Photography / motorsport */
   --acc3:#8b7fe8;  /* violet : Creative */
-  --acc4:#ec6a8f;  /* rose   : About */
+  --acc4:#ff2d4a;  /* neon red : About */
+  --acc5:#4d9bff;  /* blue   : Contact */
   --shadow:rgba(0,0,0,.35);
 }
 html[data-theme="light"]{
   --bg:#f3f2ee;--bg2:#ffffff;--fg:#14171b;--mute:#5b5f66;--line:#dcdad2;
-  --acc:#0e9484;--acc1:#0e9484;--acc2:#c17a12;--acc3:#5d4fc7;--acc4:#b23a5c;
+  --acc:#0e9484;--acc1:#0e9484;--acc2:#c17a12;--acc3:#5d4fc7;--acc4:#d81f3d;--acc5:#2563c9;
   --shadow:rgba(20,20,20,.08);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{
   background:var(--bg);color:var(--fg);font:16px/1.6 "Inter",system-ui,sans-serif;
   -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
@@ -63,6 +65,18 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:6
 .theme-btn .sun{display:none}
 html[data-theme="light"] .theme-btn .moon{display:none}
 html[data-theme="light"] .theme-btn .sun{display:block}
+.motion-btn{margin-right:-8px}
+.motion-btn:hover{transform:none}
+.motion-btn .still{display:none}
+html[data-motion="off"] .motion-btn .live{display:none}
+html[data-motion="off"] .motion-btn .still{display:block}
+html[data-motion="off"] .motion-btn{color:var(--acc);border-color:var(--acc)}
+
+/* simple mode: no 3D, no motion */
+html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html[data-motion="off"] .reveal,html[data-motion="off"] .reveal-stagger > *,html[data-motion="off"] .pop-list > *{opacity:1!important;transform:none!important}
+html[data-motion="off"] .motion-only{display:none!important}
+html:not([data-motion="off"]) .still-only{display:none!important}
 
 /* badges (used in place of third-party logos) */
 .badge{
@@ -147,3 +161,70 @@ footer p{color:var(--mute);font-size:12.5px;font-family:"IBM Plex Mono",monospac
   .navlinks a{padding:7px 6px;font-size:10.5px}
   .navlinks a .idx{margin-right:4px}
 }
+
+/* ===== page-open intros (≤1.4s, skipped in simple mode) ===== */
+html.intro-run body::before{content:"";position:fixed;inset:0;background:var(--bg);z-index:200}
+.intro-fx{position:fixed;inset:0;z-index:200;pointer-events:none}
+.intro-fx .cover{position:absolute;inset:0;background:var(--bg);pointer-events:auto}
+.intro-fx.out{opacity:0;transition:opacity .3s ease}
+.fx-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--acc)}
+
+/* About: ID scan line sweeps down and reveals the page */
+.fx-scan .cover{background:repeating-linear-gradient(0deg,var(--bg) 0 3px,color-mix(in srgb,var(--bg2) 80%,var(--bg)) 3px 4px);animation:scanCover 1.05s .1s cubic-bezier(.6,0,.3,1) forwards}
+@keyframes scanCover{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(100% 0 0 0)}}
+.fx-scan .line{position:absolute;left:0;right:0;top:0;height:2px;background:var(--acc);box-shadow:0 0 18px 3px var(--acc),0 0 60px 10px color-mix(in srgb,var(--acc) 40%,transparent);animation:scanLine 1.05s .1s cubic-bezier(.6,0,.3,1) forwards}
+.fx-scan .line .fx-label{position:absolute;right:clamp(18px,4vw,48px);top:-24px}
+@keyframes scanLine{to{transform:translateY(100vh)}}
+
+/* Engineering: blueprint grid draws in, title traces as wireframe then fills */
+.fx-blueprint .cover{display:flex;align-items:center;justify-content:center;background:
+  linear-gradient(color-mix(in srgb,var(--acc) 14%,transparent) 1px,transparent 1px) 0 0/40px 40px,
+  linear-gradient(90deg,color-mix(in srgb,var(--acc) 14%,transparent) 1px,transparent 1px) 0 0/40px 40px,var(--bg);
+  animation:bpGrid .9s ease-out both}
+@keyframes bpGrid{from{background-size:0 0,0 0,auto;opacity:.4}to{opacity:1}}
+.fx-blueprint svg{width:min(90vw,1000px);height:auto;overflow:visible}
+.fx-blueprint text{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:118px;fill:transparent;stroke:var(--acc);stroke-width:1.4;stroke-dasharray:1400;stroke-dashoffset:1400;animation:bpTrace 1.2s .2s ease-in-out forwards,bpFill .5s 1.35s ease-out forwards}
+@keyframes bpTrace{to{stroke-dashoffset:0}}
+@keyframes bpFill{to{fill:var(--fg);stroke-width:0}}
+.fx-blueprint .fx-label{position:absolute;left:clamp(18px,4vw,48px);bottom:28px}
+.fx-blueprint .fx-label + .fx-label{left:auto;right:clamp(18px,4vw,48px)}
+
+/* Photography: hexagonal aperture opens, white flash */
+@property --d{syntax:"<length>";inherits:false;initial-value:0px}
+@property --tw{syntax:"<angle>";inherits:false;initial-value:0deg}
+.fx-aperture .cover{background:transparent;overflow:hidden}
+.fx-aperture .blade{position:absolute;left:50%;top:50%;width:400vmax;height:200vmax;background:var(--bg2);border-bottom:1.5px solid var(--acc);transform-origin:0 0;transform:rotate(calc(var(--a) + var(--tw))) translate(-50%,calc(-100% - var(--d)));animation:iris .75s .2s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes iris{to{--d:110vmax;--tw:50deg}}
+.fx-aperture .flash{position:absolute;inset:0;background:#fff;opacity:0;animation:flash .5s .38s ease-out}
+@keyframes flash{15%{opacity:.75}to{opacity:0}}
+.fx-aperture .fx-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;animation:fadeOut .2s .2s forwards}
+@keyframes fadeOut{to{opacity:0}}
+
+/* Creative: design guides slide in, title letters snap into place */
+.fx-guides .cover{animation:fadeOut .35s .25s forwards}
+.fx-guides .g{position:absolute;background:var(--acc);opacity:.9;z-index:2}
+.fx-guides .g.v{top:0;bottom:0;width:1px;transform:scaleY(0);transform-origin:top;animation:gIn .35s cubic-bezier(.2,.8,.2,1) forwards}
+.fx-guides .g.h{left:0;right:0;height:1px;transform:scaleX(0);transform-origin:left;animation:gIn .35s cubic-bezier(.2,.8,.2,1) forwards}
+.fx-guides .g span{position:absolute;font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--acc);white-space:nowrap}
+.fx-guides .g.v span{top:72px;left:5px}
+.fx-guides .g.h span{left:8px;top:4px}
+@keyframes gIn{to{transform:none}}
+.snap-ch{display:inline-block;animation:snap .55s cubic-bezier(.2,.9,.3,1.35) both}
+@keyframes snap{from{opacity:0;transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.6)}}
+
+/* Contact: signal connects, heading types in like a transmission */
+.fx-transmit .cover{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.fx-transmit .bars{display:flex;align-items:flex-end;gap:4px;height:26px}
+.fx-transmit .bars i{width:5px;background:var(--acc);opacity:.2;animation:bar .18s ease-out forwards}
+.fx-transmit .bars i:nth-child(1){height:25%;animation-delay:.0s}
+.fx-transmit .bars i:nth-child(2){height:50%;animation-delay:.06s}
+.fx-transmit .bars i:nth-child(3){height:75%;animation-delay:.12s}
+.fx-transmit .bars i:nth-child(4){height:100%;animation-delay:.18s}
+@keyframes bar{to{opacity:1;box-shadow:0 0 10px var(--acc)}}
+.fx-transmit .fx-label::after{content:"";animation:dots .6s steps(4) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+.fx-transmit.ok .fx-label::after{content:" ✓";animation:none}
+.type-ch{visibility:hidden}
+.type-ch.on{visibility:visible}
+.type-caret{display:inline-block;width:.08em;height:.85em;margin-left:.06em;background:var(--acc);vertical-align:-.05em;animation:blink .5s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
