@@ -97,7 +97,7 @@ html:not([data-motion="off"]) .still-only{display:none!important}
 .exp-row.open::after{transform:rotate(45deg);color:var(--acc)}
 .exp-detail{grid-column:1/-1;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease;margin-top:0}
 .exp-row.open .exp-detail{max-height:320px;opacity:1;margin-top:14px}
-.exp-detail-inner{padding-top:14px;border-top:1px dashed var(--line);color:var(--mute);font-size:13.5px;line-height:1.7;max-width:640px}
+.exp-detail-inner{padding-top:14px;border-top:1px dashed var(--line);color:var(--mute);font-size:13.5px;line-height:1.7;max-width:none;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .exp-detail-inner img{display:block;max-width:100%;border:1px solid var(--line);margin-top:12px}
 
 /* real org logos, dropped into a small chip for contrast against either theme */
